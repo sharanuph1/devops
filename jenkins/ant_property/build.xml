@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<project name="hello_world" default="compile" >
+<property file="./build.properties"/>
+
+<target name="info" >
+<echo>..Welcome to the info state... </echo>
+<echo>ant version ${ant.version}</echo>
+<echo>ant ant.core.lib ${ant.core.lib}</echo>
+<echo>ant basedir ${basedir}</echo>
+<echo>ant projects ${ant.project.name}</echo>
+<echo>ant version ${ant.core.lib}</echo>
+<echo>ant version ${ant.home}</echo>
+<echo>ant ant.project.default-target ${ant.project.default-target}</echo>
+<echo>ant ant.project.invoked-targets ${ant.project.invoked-targets}</echo>
+<echo>ant  A = ${A}</echo>
+
+<echo>ant  B = ${B}</echo>
+<echo>ant  C = ${C}</echo>
+<echo>ant  D = ${D}</echo>
+<echo>ant  E = ${E}</echo>
+<echo>ant  F = ${F}</echo>
+
+
+
+</target>
+<target name="run">
+<echo>..Welcome to the run state... </echo>
+<echo>ant ant.project.default-target ${ant.project.default-target}</echo>
+<echo>ant ant.project.invoked-targets ${ant.project.invoked-targets}</echo>
+
+
+</target>
+<target name="compile" depends="info" >
+<echo>..Welcome to the compile state... </echo>
+<echo>ant ant.project.default-target ${ant.project.default-target}</echo>
+<echo>ant ant.project.invoked-targets ${ant.project.invoked-targets}</echo>
+</target>
+
+</project>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project name="hello_world" default="run">
+
+<target name="info" >
+<echo>..Welcome to the info state... </echo>
+</target>
+
+<target name="clean" depends="info" >
+<echo>..Welcome to the clean ... </echo>
+<delete dir="./clases"/>
+<delete dir="./jar"/>
+</target>
+
+<target name="compile" depends="clean">
+<echo>..Welcome to the compile ... </echo>
+<mkdir dir="./clases"/>
+<javac srcdir="./java" destdir="./clases"/>
+</target>
+
+<target name="run" depends="jar">
+<echo>..Welcome to the run state... </echo>
+<java jar="./jar/Helloworld.jar" fork="true"/>
+</target>
+
+
+<target name="jar" depends="compile">
+<echo>..Welcome to the run state... </echo>
+<mkdir dir="./jar"/>
+<jar destfile="./jar/Helloworld.jar" basedir="./clases">
+<manifest>
+<attribute name="Main-class" value="helloworld_1" /> 
+</manifest>
+</jar>
+</target>
+
+
+
+</project>
